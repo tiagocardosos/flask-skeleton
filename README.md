@@ -12,14 +12,10 @@ pip install -r requirements.txt
 export DATABASE_URL="mysql://root:root@localhost/flask_skeleton"
 export APP_SETTINGS="config.StagingConfig"
 ```
-# add .env
-``
+# Create file .env
+```
 DATABASE_URL="mysql://root:root@localhost/flask_skeleton"
 APP_SETTINGS="config.StagingConfig"
-``
-```
-$ export DATABASE_URL="mysql://root:root@localhost/flask_skeleton"
-$ export APP_SETTINGS="config.StagingConfig"
 ```
 # Manager / Migrate
 ```
