@@ -1,4 +1,5 @@
-# Install
+# Flask APIs
+This code base serves as starting point for writing your next Flask application.
 
 # Install
 Clone this repo, set up and activate a virtualenv and install the required python dependencies
