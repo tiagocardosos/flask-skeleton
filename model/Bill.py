@@ -7,6 +7,7 @@ tags = db.Table('tags',
 class Bill(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     owner_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    category_id = db.Column(db.Integer, db.ForeignKey('category.id'), nullable=False)
     description = db.Column(db.String(255), nullable=False)
     due_date = db.Column(db.Date, nullable=False)
     total = db.Column(db.DECIMAL(13, 2))
