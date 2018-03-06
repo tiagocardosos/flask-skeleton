@@ -1,12 +1,14 @@
-from manage import db, _get_date_time
+from run import db, _get_date_time
 
 tags = db.Table('tags',
                 db.Column('tag_id', db.Integer, db.ForeignKey('tag.id'), primary_key=True),
-                db.Column('bill_id', db.Integer, db.ForeignKey('bill.id'), primary_key=True))
+                db.Column('bill_id', db.Integer, db.ForeignKey('bills.id'), primary_key=True))
 
 class Bill(db.Model):
+    __tablename__ = 'bills'
+
     id = db.Column(db.Integer, primary_key=True)
-    owner_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    owner_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     category_id = db.Column(db.Integer, db.ForeignKey('category.id'), nullable=False)
     description = db.Column(db.String(255), nullable=False)
     due_date = db.Column(db.Date, nullable=False)
