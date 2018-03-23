@@ -34,6 +34,24 @@ $ python manage.py db --help
 $ python run.py
 ```
 
+# Register
+``
+curl localhost:5000/register -d '{"name": "teste", "email": "email@email.com", "password": 123321}' -H 'Content-Type: application/json'
+``
+# Login
+``
+curl localhost:5000/login -d '{"email":"email@email.com", "password": "123321"}' -H 'Content-Type: application/json'
+``
+
+# Logged
+``
+curl -X GET \
+  http://localhost:5000/logged \
+  -H 'authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MjE4MzU3OTUsImlhdCI6MTUyMTgzMzk5NSwibmJmIjoxNTIxODMzOTk1LCJpZGVudGl0eSI6NH0.RS0VuxJH7Gs7LDircp5As_85ZE2mzEKWgqEbATP4sPs' \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json'
+``
+
 #Acknowledgements
 With thanks to the following Flask extensions:
 
