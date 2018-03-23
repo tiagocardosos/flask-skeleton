@@ -26,6 +26,11 @@ $ python manage.py db upgrade
 $ python manage.py db --help
 ```
 
+# Run
+```
+$ python run.py
+```
+
 #Acknowledgements
 With thanks to the following Flask extensions:
 
