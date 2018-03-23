@@ -26,6 +26,9 @@ $ python manage.py db upgrade
 $ python manage.py db --help
 ```
 
+# Fakers
+# Logging
+
 # Run
 ```
 $ python run.py

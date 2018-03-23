@@ -1,1 +1,1 @@
-from flask_jwt import jwt_required
+from flask_jwt import jwt_required, current_identity

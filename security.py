@@ -1,19 +1,11 @@
-from werkzeug.security import safe_str_cmp
 from model.User import UserModel
 
-users = [
-    UserModel(1, 'bob', 'bob@bob.com', 'asdf')
-]
-
-useremail_mapping = {u.email: u for u in users}
-userid_mapping = {u.id: u for u in users}
-
-def authenticate(username, password):
-    user = useremail_mapping.get(username, None)
-    if user and safe_str_cmp(user.password, password):
+def authenticate(email, password):
+    user = UserModel.find_by_email(email)
+    if user and user.check_password(password):
         return user
 
 
 def identity(payload):
     user_id = payload['identity']
-    return userid_mapping.get(user_id, None)
+    return UserModel.query.get(user_id)
