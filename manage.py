@@ -4,7 +4,8 @@ from flask_script import Manager
 # from marshmallow_sqlalchemy import ModelSchema
 from model import User, Bill, Tag, Category
 
-from run import app, db
+from app import app
+from database import db
 
 app.config.from_object(os.environ['APP_SETTINGS'])
 

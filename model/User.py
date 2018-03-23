@@ -1,4 +1,4 @@
-from run import db, _get_date_time
+from database import db, _get_date_time
 
 class UserModel(db.Model):
     __tablename__ = 'users'

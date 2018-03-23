@@ -1,4 +1,4 @@
-from run import db
+from database import db, _get_date_time
 
 
 class TagModel(db.Model):

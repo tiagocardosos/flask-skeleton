@@ -1,4 +1,4 @@
-from run import db, _get_date_time
+from database import db, _get_date_time
 
 tags = db.Table('tags',
                 db.Column('tag_id', db.Integer, db.ForeignKey('tag.id'), primary_key=True),
