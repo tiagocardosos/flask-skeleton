@@ -1,5 +1,6 @@
 from flask_restful import Resource, reqparse
 from model.Tag import TagModel
+from run import jwt_required
 
 
 class TagAPI(Resource):
@@ -45,6 +46,7 @@ class TagListAPI(Resource):
         self.parser.add_argument('name', required=True, help='This field cannot be left blank!')
         self.parser.add_argument('active', default=True, type=bool)
 
+    @jwt_required()
     def post(self):
         data = self.parser.parse_args()
         name = data['name']
@@ -60,6 +62,7 @@ class TagListAPI(Resource):
 
         return tag.json(), 201
 
+    @jwt_required()
     def get(self):
         tags = TagModel.query.all()
 

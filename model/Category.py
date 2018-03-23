@@ -1,4 +1,4 @@
-from run import db, _get_date_time
+from run import db
 
 
 class CategoryModel(db.Model):

@@ -3,6 +3,7 @@ import datetime
 from flask import Flask
 from flask_restful import Api
 from flask_sqlalchemy import SQLAlchemy
+from flask_jwt import JWT, jwt_required
 import os
 
 app = Flask(__name__)
