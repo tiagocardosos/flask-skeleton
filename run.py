@@ -8,6 +8,7 @@ import os
 app = Flask(__name__)
 app.config.from_object(os.environ['APP_SETTINGS'])
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['BUNDLE_ERRORS'] = True
 db = SQLAlchemy(app)
 api = Api(app)
 

@@ -25,3 +25,17 @@ $ python manage.py db migrate
 $ python manage.py db upgrade
 $ python manage.py db --help
 ```
+
+#Acknowledgements
+With thanks to the following Flask extensions:
+
+- Alembic
+- Flask
+- Flask-Migrate
+- Flask-Script
+- Flask-JWT
+- Flask-RESTful
+- Flask-SQLAlchemy
+
+#Authors
+- Tiago Cardoso -- tiagocardosos AT gmail DOT com
