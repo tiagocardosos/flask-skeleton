@@ -1,11 +1,13 @@
 from database import db, _get_date_time
 from werkzeug.security import safe_str_cmp, generate_password_hash, check_password_hash
+import uuid
 
 class UserModel(db.Model):
     __tablename__ = 'users'
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
+    public_id = db.Column(db.String(60), nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
     password = db.Column(db.String(100), nullable=False)
     remember_token = db.Column(db.String(60))
@@ -18,6 +20,7 @@ class UserModel(db.Model):
         self.name = name
         self.email = email
         self.set_password(password)
+        self.public_id = str(uuid.uuid4())
 
     def set_password(self, password):
         self.password = generate_password_hash(password)

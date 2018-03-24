@@ -1,13 +1,13 @@
 from app import app
 from flask_restful import Api
 from flask_jwt import JWT
-from security import authenticate, identity
+from security import authenticate, identity as identity_function
 from resource.bill import Bill, BillList
 from resource.tag import TagAPI, TagListAPI
 from resource.category import CategoryAPI, CategoryListAPI, CategoryTypeListAPI
 from resource.user import UserLoggedAPI, UserRegisterAPI
 
-jwt = JWT(app, authenticate, identity)
+jwt = JWT(app, authenticate, identity_function)
 api = Api(app)
 
 api.add_resource(BillList, '/bill')
